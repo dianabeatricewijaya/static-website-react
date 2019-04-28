@@ -19,7 +19,7 @@ class Hero extends Component {
                   <hr />
                   <div >
                   <div className="hero__btn">
-                  <button className="btn">LET'S MAKE CONTACT</button>
+                  <button className="but">LET'S MAKE CONTACT</button>
                 </div>
                 </div>
                </div>

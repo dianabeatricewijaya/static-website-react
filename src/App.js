@@ -4,7 +4,6 @@ import Hero from './components/Hero';
 import Highlights from './components/Highlights'
 import Footer from './components/Footer';
 import CookieConsent from "react-cookie-consent";
-import Newsletter from './components/Newsletter';
 import ScrollPercentage from 'react-scroll-percentage';
 import styled from 'styled-components';
 import './css/layout.css'
@@ -20,9 +19,6 @@ const Container = styled.div`
     z-index:999
     transition: top 0.5s ease;
 `;
-
-
-
 
 export default class App extends React.Component{
   constructor(props){
@@ -69,23 +65,27 @@ onShow = () =>{
 
  render(){
    return(
-    
      <div>
         <ScrollPercentage
           onChange={(percentage, inView) => console.log(percentage, inView)}
         >
       <Container bottom={this.state.bottom}>
+            
             <h3>Get latest updates in web technologies</h3>
             <p>I write articles related to web technologies, such as design trends, development
-tools, UI/UX case studies and reviews, and more. Sign up to my newsletter to get
-them all.</p>
+            tools, UI/UX case studies and reviews, and more. Sign up to my newsletter to get
+            them all.</p>
             <form>
-                <label>
-                    <input type="text" name="name" placeholder="Email address" className="" />
-                </label>
-                <input type="submit" value="Count me in" className="sub"/>
+              <div className="col-lg-12">
+              <div className="col-lg-8 col-md-8 col-sm-12">
+                <input type="text" name="name" placeholder="Email address" className="form-control" />
+              </div>
+              <div className="col-lg-4 col-md-4 col-sm-12">
+                <input type="button" value="Count me in" className="btn btn-block sub"/>
+            </div>
+            </div>
             </form>
-                            </Container>
+      </Container>
       <CookieConsent
         location="top"
         buttonText="Got it"
@@ -101,15 +101,10 @@ them all.</p>
           </div>
         </center>
     </CookieConsent>
-    
        <Hero/>
        <Highlights/>
        <Footer/>
       </ScrollPercentage>
-      
-       
-
-       
      </div>
    )
  }
