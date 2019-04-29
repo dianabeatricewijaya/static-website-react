@@ -5,7 +5,7 @@ const Container = styled.div`
     background-color: rgba(0,123,193,0.9);
     color :white;
     padding:30px;
-    max-width:620px;
+    max-width:640px;
     position:fixed;
     bottom:${props =>props.bottom}px;
     z-index:999
@@ -40,7 +40,9 @@ export default class Newsletter extends Component {
       onhide = () => {
           this.setState({
               bottom:-300,
-          });
+          }
+          );
+          
       }    
     
     
