@@ -4,80 +4,72 @@ import styled from 'styled-components';
 const Container = styled.div`
     background-color: rgba(0,123,193,0.9);
     color :white;
-    padding:16px;
+    padding:30px;
     max-width:620px;
     position:fixed;
     bottom:${props =>props.bottom}px;
-    left:${props =>props.left}px;
     z-index:999
-    transition: top 0.5s ease;
+    transition: bottom 0.5s ease;
 `;
 
-class Newsletter extends Component {
+export default class Newsletter extends Component {
     constructor(props){
         super(props);
         this.state={
-            bottom: -300,
-            left: -100
+            bottom: -300
         }
-        this.timeout =null;
     }    
-
-
-componentDidMount() {
-    // test
-    }
+    componentDidMount() {
+       window.addEventListener('scroll', this.listenToScroll)
+        }
+      
+        componentWillUnmount() {
+        window.removeEventListener('scroll', this.listenToScroll)
+       }
     
-onShow = () =>{
-    if(this.timeout){
-        clearTimeout(this.timeout);
-        this.setState({bottom:-300}, ()=>{
-            this.timeout = setTimeout(()=>{
-                this.showNewsletter();},500);
-            });
-        }else{
-            this.showNewsletter();
-        }}
-
-showNewsletter = () => {
-    this.setState({
-        bottom:16,
-    },() =>{
-        this.timeout = setTimeout(() =>{
-            this.setState({
-                bottom:-300,
-            });
-        },3000);
-    });
-}    
-
-    handleScroll(event) {
-    var heightBound = window.height * 0.5
-    if (heightBound > window.scrollY) {
-        this.showNewsletter()
-    } 
-    }
+        listenToScroll = () => {
+        const winScroll =
+          document.body.scrollTop || document.documentElement.scrollTop
+    
+        if (winScroll > winScroll/2){
+          this.showNewsletter();
+         }
+        
+      }
+    
+      onhide = () => {
+          this.setState({
+              bottom:-300,
+          });
+      }    
+    
+    
+      showNewsletter = () => {
+          this.setState({
+              bottom:0,
+          });
+      }    
+    
     
     render() {    
         return(
-            <React.Fragment onScroll={this.handleScroll}>
-                
             <Container bottom={this.state.bottom}>
+            <button onClick={(e) => this.onhide(e)} type="button" data-dismiss="alert" class="close close-but" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
             <h3>Get latest updates in web technologies</h3>
             <p>I write articles related to web technologies, such as design trends, development
-tools, UI/UX case studies and reviews, and more. Sign up to my newsletter to get
-them all.</p>
+            tools, UI/UX case studies and reviews, and more. Sign up to my newsletter to get
+            them all.</p>
             <form>
-                <label>
-                    <input type="text" name="name" placeholder="Email address" />
-                </label>
-                <input type="submit" value="Count me in" />
+              <div className="col-lg-8 col-md-8 col-sm-12">
+                <input type="email" name="name" placeholder="Email address" className="form-control" />
+              </div>
+              <div className="col-lg-4 col-md-4 col-sm-12">
+                <input type="button" value="Count me in" className="btn btn-block sub"/>
+            </div>
             </form>
-                            </Container>
-                            
-            </React.Fragment>
+         </Container>
         );
     }
   }
-  
-  export default Newsletter;

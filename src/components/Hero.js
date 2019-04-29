@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import Logo from '../logo.png';
 import '../css/layout.css'
-class Hero extends Component {
-        
+
+export default class Hero extends Component {
     render() {    
       const name= "Diana Beatrice";
       const description= "Have something great in mind? Feel free to contact me.";
       const description2= "I'll help you to make it happen.";
-  
         return(
             <header id="home">
             <a href="/"><img className="logo" src={Logo} alt="Logo" /></a>
@@ -28,5 +27,3 @@ class Hero extends Component {
           );
         }
       }
-      
-      export default Hero;

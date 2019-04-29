@@ -1,5 +1,10 @@
 import React from 'react';
 import brush from '../images/paint-brush.svg';
+import comment from '../images/comments-solid.svg';
+import chart from '../images/chart-line-solid.svg';
+import cubes from '../images/cubes-solid.svg';
+import task from '../images/tasks-solid.svg';
+import bullhorn from '../images/bullhorn-solid.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'react-bootstrap';
 
@@ -24,7 +29,7 @@ export default class Highlights extends React.Component {
     state = {
         data: [
           {
-            img: brush,
+            img: comment,
             title: 'Consult',
             desc:
               'Co-create, design thinking; strengthen infrastructure resist granular. Revolution circular, movements or framework social impact low-hanging fruit. Save the world compelling revolutionary progress.'
@@ -36,25 +41,25 @@ export default class Highlights extends React.Component {
               'Policymaker collaborates collective impact humanitarian shared value vocabulary inspire issue outcomes agile. Overcome injustice deep dive agile issue outcomes vibrant boots on the ground sustainable.'
           },
           {
-            img: brush,
+            img: cubes,
             title: 'Develop',
             desc:
               'Revolutionary circular, movements a or impact framework social impact low-hanging. Save the compelling revolutionary inspire progress. Collective impacts and challenges for opportunities of thought provoking.'
           },
           {
-            img: brush,
+            img: bullhorn,
             title: 'Marketing',
             desc:
               'Peaceful; vibrant paradigm, collaborative cities. Shared vocabulary agile, replicable, effective altruism youth. Mobilize commitment to overcome injustice resilient, uplift social transparent effective.'
           },
           {
-            img: brush,
+            img: task,
             title: 'Manage',
             desc:
               'Change-makers innovation or shared unit of analysis. Overcome injustice outcomes strategize vibrant boots on the ground sustainable. Optimism, effective altruism invest optimism corporate social.'
           },
           {
-            img: brush,
+            img: chart,
             title: 'Evolve',
             desc:
               'Activate catalyze and impact contextualize humanitarian. Unit of analysis overcome injustice storytelling altruism. Thought leadership mass incarceration. Outcomes big data, fairness, social game-changer.'

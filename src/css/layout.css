@@ -10,7 +10,12 @@ header {
     text-align: center;
     overflow: hidden;
  }
-
+ .close-but{
+   color:white !important;
+ }
+ .close-but:hover{
+  color:white !important;
+}
  body { background: white; 
 }
 .sub{
@@ -83,7 +88,7 @@ padding: 1.5rem 1.5rem 1.5rem 1.5rem !important;
 background-color: transparent;
 
  }
- .btn:hover{
+ .but:hover{
   border-width: 2px;
   border-style: solid;
   background-color:white;
@@ -122,7 +127,7 @@ box-shadow: 1px 1px 1px 1px rgb(229, 229, 236);
     .features .item__img {
       float:right;
       height: 25px;
-      opacity: 0.5; }
+      opacity: 0.4; }
     .features .item__title {
       margin-top: 0.625rem; }
 
